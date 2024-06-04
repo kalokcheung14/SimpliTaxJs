@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+.app-bar {
+    width: 100%;
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    font-size: 24px;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.content {
+    margin-top: 60px; /* Add margin to avoid content being hidden behind the app bar */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    color: #333;
+}
+.input-container {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.number-display {
+    font-size: 50px;
+    color: #007bff;
+}
+.label {
+    font-size: 20px;
+    margin: 10px;
+}
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+    margin-top: 20px;
+}
+.keyboard button {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.keyboard button.clear {
+    background-color: #ff4d4d;
+}
+.input-display {
+   border: 2px solid #007bff;
+   border-radius: 10px;
+   padding: 10px;
+   width: 200px;
+   text-align: center;
+   font-size: 40px;
+   color: #000000;
+   background-color: white;
+}

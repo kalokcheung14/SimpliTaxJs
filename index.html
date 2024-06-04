@@ -1,64 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpliTax</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-        .input-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .number-display {
-            font-size: 50px;
-            color: #007bff;
-        }
-        .label {
-          font-size: 20px;
-          margin: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>SimpliTax</h1>
-    <div class="input-container">
-        <div class="label"><label for="numberInput">Enter the price before tax:</label></div>
-        <input type="number" id="numberInput" oninput="updateNumberDisplay()">
-    </div>
-    <div class="label"><label for="numberDisplay">The price after tax:</label></div>
-    <div class="number-display" id="numberDisplay">0.00</div>
-    <div>(This is only an estimated price)</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SimpliTax</title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="app-bar">SimpliTax</div>
+            <div class="content">
+                <div class="input-container">
+                    <div class="label">Enter the price before tax:</div>
+                    <div class="input-display" id="numberInput">0.00</div>
+                </div>
+                <div class="label">
+                    <label for="numberDisplay">The price after tax:</label>
+                </div>
+                <div class="number-display" id="numberDisplay">0.00</div>
+                <div>(This is only an estimated price)</div>
 
-    <script>
-        /**
-        * Calculate the price after tax
-        **/
-        function calcTax(pretax) {
-            if (isNaN(pretax)) {
-                return 0
-            } else {
-                return pretax * 1.13
-            }
-        }
-
-        function updateNumberDisplay() {
-            const numberInput = document.getElementById('numberInput').value;
-            const numberDisplay = document.getElementById('numberDisplay');
-            numberDisplay.textContent = (numberInput ? calcTax(numberInput) : 0).toFixed(2);
-        }
-    </script>
-</body>
+                <div class="keyboard">
+                    <button onclick="addToInput('1')">1</button>
+                    <button onclick="addToInput('2')">2</button>
+                    <button onclick="addToInput('3')">3</button>
+                    <button onclick="addToInput('4')">4</button>
+                    <button onclick="addToInput('5')">5</button>
+                    <button onclick="addToInput('6')">6</button>
+                    <button onclick="addToInput('7')">7</button>
+                    <button onclick="addToInput('8')">8</button>
+                    <button onclick="addToInput('9')">9</button>
+                    <button onclick="addToInput('0')">0</button>
+                    <button onclick="addToInput('.')">.</button>
+                    <button class="clear" onclick="clearInput()">C</button>
+                </div>
+          </div>
+    </body>
 </html>
