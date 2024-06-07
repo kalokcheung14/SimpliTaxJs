@@ -1,7 +1,11 @@
 function addToInput(value) {
     const numberInput = document.getElementById('numberInput');
-    if (value === '.' && numberInput.textContent.includes('.')) return;
-    if (numberInput.textContent === '0.00' || numberInput.textContent === '0') {
+    const textContent = numberInput.textContent;
+
+    if (value === '.' && textContent.includes('.')) return;
+    if (textContent.length > 7) return;
+
+    if (textContent === '0.00' || textContent === '0') {
         numberInput.textContent = value;
     } else {
         numberInput.textContent += value;
@@ -11,7 +15,7 @@ function addToInput(value) {
 
 function clearInput() {
     const numberInput = document.getElementById('numberInput');
-    numberInput.textContent = '0.00';
+    numberInput.textContent = '0';
     updateNumberDisplay();
 }
 
@@ -26,5 +30,14 @@ function calcTax(pretax) {
 function updateNumberDisplay() {
     const numberInput = document.getElementById('numberInput').textContent;
     const numberDisplay = document.getElementById('numberDisplay');
-    numberDisplay.textContent = (numberInput ? calcTax(parseFloat(numberInput)) : 0).toFixed(2);
+    const numberTip1 = document.getElementById('numberTip1');
+    const numberTip2 = document.getElementById('numberTip2');
+    const numberTip3 = document.getElementById('numberTip3');
+
+    const finalPrice = (numberInput ? calcTax(parseFloat(numberInput)) : 0)
+
+    numberDisplay.textContent = finalPrice.toFixed(2);
+    numberTip1.textContent = (finalPrice * 1.15).toFixed(2);
+    numberTip2.textContent = (finalPrice * 1.18).toFixed(2);
+    numberTip3.textContent = (finalPrice * 1.20).toFixed(2);
 }

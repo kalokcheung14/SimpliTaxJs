@@ -12,13 +12,21 @@
             <div class="content">
                 <div class="input-container">
                     <div class="label">Enter the price before tax:</div>
-                    <div class="input-display" id="numberInput">0.00</div>
+                    <div class="input-display" id="numberInput">0</div>
                 </div>
                 <div class="label">
                     <label for="numberDisplay">The price after tax:</label>
                 </div>
                 <div class="number-display" id="numberDisplay">0.00</div>
                 <div>(This is only an estimated price)</div>
+                <div class="number-tip-container">
+                  <div class="number-tip-header">Tip 15%</div>
+                  <div class="number-tip-header">Tip 18%</div>
+                  <div class="number-tip-header">Tip 20%</div>
+                  <div class="number-tip-display" id="numberTip1">0.00</div>
+                  <div class="number-tip-display" id="numberTip2">0.00</div>
+                  <div class="number-tip-display" id="numberTip3">0.00</div>
+                </div>
 
                 <div class="keyboard">
                     <button class="clear" onclick="clearInput()">C</button>

@@ -75,3 +75,18 @@ h1 {
    color: #000000;
    background-color: white;
 }
+.number-tip-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10px;
+  width: 80%;
+}
+.number-tip-header {
+    font-size: 15px;
+    text-align: center;
+}
+.number-tip-display {
+    font-size: 18px;
+    color: #007bff;
+    text-align: center;
+}
