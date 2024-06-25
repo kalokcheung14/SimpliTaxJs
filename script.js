@@ -44,7 +44,7 @@ function updateNumberDisplay() {
 
     // Calculate the final payment after applying different tipping percentages
     numberDisplay.textContent = finalPrice.toFixed(2);
-    numberTip1.textContent = (finalPrice + numberInput * 0.15).toFixed(2);
-    numberTip2.textContent = (finalPrice + numberInput * 0.18).toFixed(2);
-    numberTip3.textContent = (finalPrice + numberInput * 0.20).toFixed(2);
+    numberTip1.textContent = (finalPrice + numberInput * 0.10).toFixed(2);
+    numberTip2.textContent = (finalPrice + numberInput * 0.15).toFixed(2);
+    numberTip3.textContent = (finalPrice + numberInput * 0.18).toFixed(2);
 }
